@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Plugin</title>
+    <link rel="stylesheet" href="assests/css/bootstrap.min.css">
+    <style>
+        section {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            border: 2px solid blue;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<!--<h1>Hope this will help you for the game assignment</h1>-->
+
+<section id="main"></section>
+<div id="draggable"></div>
+
+<script src="assests/js/jQuery-3.7.0.min.js"></script>
+<script src="assests/js/jquery-ui.min.js"></script>
+<script>
+    $("#draggable").draggable();
+    $("#main").draggable();
+
+    $("#main").droppable(
+        {
+            drop: function (event, ui) {
+                alert("DDD");
+                $("#main").css("background-color", "green");
+                $("#draggable").css("background-color", "yellow");
+            }
+        }
+    );
+
+</script>
+</body>
+</html>
